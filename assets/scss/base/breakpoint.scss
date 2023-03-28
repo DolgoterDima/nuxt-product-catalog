@@ -1,0 +1,23 @@
+// Bootstrap breakpoints mixins
+@import 'bootstrap/scss/mixins/_breakpoints.scss';
+
+$grid-breakpoints: (
+  xl: 1900px,
+  lg: 1600px,
+  md: 1280px,
+  sm: 768px,
+);
+
+// Design rules:
+//
+// xl -> 1600
+// lg -> 1280
+// md -> 768
+// sm -> 320
+
+// Examples:
+//
+// @include media-breakpoint-down(xl) {} 1600-1899.98
+// @include media-breakpoint-down(lg) {} 1280-1599.98
+// @include media-breakpoint-down(md) {} 768-1279.98
+// @include media-breakpoint-down(sm) {} 0-767.98

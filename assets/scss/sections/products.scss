@@ -1,0 +1,14 @@
+.products {
+
+  &__title {
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__product {
+    width: 25%;
+  }
+}
