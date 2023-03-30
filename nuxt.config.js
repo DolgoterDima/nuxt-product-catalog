@@ -16,14 +16,13 @@ export default {
       lang: 'ru',
     },
     meta: [
-      {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: ''},
-
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: '' },
     ],
     link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
-      {rel: 'stylesheet', href: '/css/index.css'},
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: '/css/index.css' },
       // Preload fonts
       // {
       //   rel: 'preload',
@@ -42,7 +41,7 @@ export default {
   loading: false,
 
   // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-server
-  server: {host, port},
+  server: { host, port },
 
   // Env variables: https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-env
   // env: {
@@ -50,6 +49,8 @@ export default {
   // },
 
   // Router: https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-router
+  ssr: false,
+  target: 'static',
   mode: 'static',
   generate: {
     fallback: true,
@@ -123,7 +124,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    ['@nuxtjs/eslint-module', {cache: false}], // https://go.nuxtjs.dev/eslint
+    ['@nuxtjs/eslint-module', { cache: false }], // https://go.nuxtjs.dev/eslint
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -140,13 +141,13 @@ export default {
     },
     // transpile: [], // Transpile dependencies, example: 'swiper'
     babel: {
-      presets({isServer}, [preset, options]) {
+      presets({ isServer }, [preset, options]) {
         return [
           [
             preset,
             {
               ...options,
-              targets: isServer ? {node: '10'} : {ie: '11'},
+              targets: isServer ? { node: '10' } : { ie: '11' },
             },
           ],
         ];
