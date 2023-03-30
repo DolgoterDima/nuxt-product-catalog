@@ -48,9 +48,13 @@ export default {
   // },
 
   // Router: https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-router
-  // router: {
-  //   middleware: 'router', // Router middleware, if needed
-  // },
+  mode: 'static',
+  generate: {
+    fallback: true,
+  },
+  router: {
+    base: '/nuxt-product-catalog/',
+  },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['@/assets/scss/app.scss'],
