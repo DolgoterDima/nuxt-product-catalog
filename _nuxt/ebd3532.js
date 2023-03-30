@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{249:function(e,n,t){"use strict";t.r(n);var c={name:"IndexPage",mounted:function(){this.$router.push("/products")}},o=t(34),component=Object(o.a)(c,(function(){var e=this.$createElement;return(this._self._c||e)("div",{staticClass:"index-page"})}),[],!1,null,null,null);n.default=component.exports}}]);
