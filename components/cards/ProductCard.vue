@@ -4,9 +4,9 @@
       <span class="product-card__title">{{ title }}</span>
     </header>
     <div class="product-card__row">
-      <span class="product-card__rating-legend"
-        >{{ rating.rate }} ({{ rating.count }})</span
-      >
+      <span class="product-card__rating-legend">
+        {{ rating.rate }} ({{ rating.count }})
+      </span>
 
       <CRating :rating="rating.rate" class="product-card__rating-star" />
     </div>
