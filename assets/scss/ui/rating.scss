@@ -1,0 +1,10 @@
+.rating {
+  mask-image: url('static/images/star-group.png');
+  mask-repeat: repeat-x;
+  mask-size: calc(100% / 1) auto;
+  mask-position: 0 0;
+
+  display: block;
+
+  aspect-ratio: 1 /0.2;
+}

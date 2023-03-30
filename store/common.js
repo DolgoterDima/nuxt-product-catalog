@@ -4,7 +4,7 @@ const state = () => ({
 });
 
 const getters = {
-  getCategories: ({ categoriesArr }) => categoriesArr,
+  getCategories: ({ categoriesArr }) => ['All', ...categoriesArr],
   getProducts: ({ productsArr }) => productsArr,
   getProductById:
     ({ productsArr }) =>

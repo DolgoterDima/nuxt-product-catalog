@@ -5,6 +5,28 @@
   @return #{$pixels / $context}em;
 }
 
+// Mixins for Resize
+@mixin is-mobile {
+  .is-mobile & {
+    @content;
+  }
+}
+
+@mixin is-tablet {
+  .is-tablet & {
+    @content;
+  }
+}
+
+
+@mixin is-desktop {
+  .is-desktop & {
+    @content;
+  }
+
+
+}
+
 @mixin placeholder {
   &::-webkit-input-placeholder {
     /* WebKit, Blink, Edge */
@@ -44,7 +66,8 @@
 }
 
 @mixin hover {
-  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0) {
+  @media (hover), (min-width: 0 \0
+  ), (min--moz-device-pixel-ratio: 0) {
     &:hover {
       @content;
     }
@@ -89,6 +112,7 @@
   #{$property}: $pxValues;
   #{$property}: $remValues;
 }
+
 
 // Clearfix
 @mixin clearfix {
@@ -152,6 +176,7 @@
     @content;
   }
 }
+
 //USAGE
 //@include keyframes(move-the-object) {
 //	0%   { left: 100px; }

@@ -1,0 +1,66 @@
+.product-single {
+  &__row {
+    display: flex;
+
+    &--data {
+      @include is-mobile {
+        flex-direction: column;
+      }
+    }
+  }
+
+
+  &__icon {
+    width: em(10);
+  }
+
+  &__title {
+    margin-top: 20px;
+  }
+
+  &__description {
+  }
+
+  &__rating-legend {
+  }
+
+  &__rating-star {
+    margin-left: em(10);
+    width: em(80);
+  }
+
+  &__side {
+
+
+    padding: em(20);
+
+    &--image {
+      width: 30%;
+      @include is-mobile {
+        width: 100%;
+      }
+    }
+
+    &--description {
+
+    }
+  }
+
+  &__image {
+
+
+  }
+
+
+  &__price {
+  }
+
+  &__button {
+    &--back {
+      font-size: em(20);
+    }
+
+  }
+}
+
+

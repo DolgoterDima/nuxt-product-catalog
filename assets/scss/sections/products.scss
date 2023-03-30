@@ -1,14 +1,27 @@
 .products {
+  padding-top: em(50);
 
   &__title {
+    margin-bottom: em(20);
   }
 
   &__list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: em(20);
+    grid-auto-rows: 1fr;
+    margin: 0 auto;
+
+    @include is-tablet {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @include is-mobile {
+      grid-template-columns: 1fr;
+    }
   }
 
+
   &__product {
-    width: 25%;
+    max-width: 100%;
   }
 }

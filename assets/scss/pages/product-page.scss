@@ -1,0 +1,64 @@
+.product-page {
+  &__filters {
+    display: flex;
+    gap: em(20);
+    @include is-mobile {
+      flex-direction: column;
+
+    }
+  }
+
+  &__select {
+  }
+
+  &__products {
+  }
+}
+
+.products {
+  &__title {
+  }
+
+  &__list {
+  }
+
+  &__product {
+  }
+}
+
+
+.product-page {
+  &__row {
+  }
+
+  &__icon {
+  }
+
+  &__title {
+  }
+
+  &__description {
+  }
+
+  &__rating-legend {
+  }
+
+  &__rating-star {
+  }
+
+  &__image-side {
+  }
+
+  &__image {
+  }
+
+  &__information-side {
+  }
+
+  &__price {
+  }
+
+  &__button {
+  }
+}
+

@@ -1,5 +1,12 @@
 <template>
-  <div :style="{ fontSize: `${fSize}px` }">
+  <div
+    :class="{
+      'is-mobile': isMobile,
+      'is-tablet': isTablet,
+      'is-desktop': isDesktop,
+    }"
+    :style="{ fontSize: `${fSize}px` }"
+  >
     <slot />
   </div>
 </template>
@@ -7,6 +14,7 @@
 <script>
 const defaultWidth = 1440;
 const defaultHeight = 720;
+const tabletWidth = 990;
 const minWidth = 768;
 const minHeight = 600;
 const defaultFont = 16;
@@ -20,6 +28,15 @@ export default {
     };
   },
   computed: {
+    isTablet() {
+      return this.vW > minWidth && this.vW < tabletWidth;
+    },
+    isMobile() {
+      return this.vW < minWidth;
+    },
+    isDesktop() {
+      return this.vW > defaultWidth;
+    },
     isMobileStatus() {
       return this.$device.isMobileOrTablet || this.vW < minWidth;
     },

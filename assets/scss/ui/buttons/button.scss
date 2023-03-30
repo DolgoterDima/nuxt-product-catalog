@@ -1,0 +1,14 @@
+.button {
+  background-color: $blue;
+  color: $white;
+  border: none;
+  transition: color 0.3s linear;
+  padding: em(5) em(10);
+  border-radius: em(5);
+  display: flex;
+  gap: 10px;
+
+  &:hover {
+    background-color: lighten($blue, 10%);
+  }
+}
