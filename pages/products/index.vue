@@ -52,18 +52,21 @@
 import { mapGetters, mapActions } from 'vuex';
 import ProductCard from '@/components/cards/ProductCard.vue';
 
-/*const dictSelected = {
-  all: 'all',
-  completed: 'completed',
-  uncompleted: 'uncompleted',
-  favorites: 'favorites',
-};*/
+const dictionaryFilter = {
+  all: 'All',
+  priceAsc: 'price-asc',
+  priceDesc: 'price-desc',
+  ratingAsc: 'rating-asc',
+  ratingDesc: 'rating-desc',
+  ratingCountAsc: 'rating-count-asc',
+  ratingCountDesc: 'rating-count-desc',
+};
 export default {
   name: 'ProductPage',
   data() {
     return {
-      selectedCategory: 'All',
-      selectedSort: 'price-asc',
+      selectedCategory: dictionaryFilter.all,
+      selectedSort: dictionaryFilter.priceAsc,
     };
   },
   components: { ProductCard },
@@ -75,19 +78,21 @@ export default {
 
     filteredAndSortedProducts() {
       const filteredProducts =
-        this.selectedCategory === 'All'
+        this.selectedCategory === dictionaryFilter.all
           ? [...this.getProducts]
           : this.getProducts.filter(
               (product) => product.category === this.selectedCategory
             );
 
       const sortFunctions = {
-        'price-asc': (a, b) => a.price - b.price,
-        'price-desc': (a, b) => b.price - a.price,
-        'rating-desc': (a, b) => b.rating.rate - a.rating.rate,
-        'rating-asc': (a, b) => a.rating.rate - b.rating.rate,
-        'rating-count-desc': (a, b) => b.rating.count - a.rating.count,
-        'rating-count-asc': (a, b) => a.rating.count - b.rating.count,
+        [dictionaryFilter.priceAsc]: (a, b) => a.price - b.price,
+        [dictionaryFilter.priceDesc]: (a, b) => b.price - a.price,
+        [dictionaryFilter.ratingAsc]: (a, b) => a.rating.rate - b.rating.rate,
+        [dictionaryFilter.ratingDesc]: (a, b) => b.rating.rate - a.rating.rate,
+        [dictionaryFilter.ratingCountAsc]: (a, b) =>
+          a.rating.count - b.rating.count,
+        [dictionaryFilter.ratingCountDesc]: (a, b) =>
+          b.rating.count - a.rating.count,
       };
 
       return filteredProducts.sort(sortFunctions[this.selectedSort]);

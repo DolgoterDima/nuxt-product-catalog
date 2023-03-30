@@ -1,10 +1,11 @@
+const FIRST_CATEGORY = 'All';
 const state = () => ({
   productsArr: [],
   categoriesArr: [],
 });
 
 const getters = {
-  getCategories: ({ categoriesArr }) => ['All', ...categoriesArr],
+  getCategories: ({ categoriesArr }) => [FIRST_CATEGORY, ...categoriesArr],
   getProducts: ({ productsArr }) => productsArr,
   getProductById:
     ({ productsArr }) =>
